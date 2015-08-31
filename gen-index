@@ -17,7 +17,23 @@ while IFS='' read -r line; do
   wikiname=$(echo "$filename" | cut -d. -f1)
   wikidir=$(echo "$filename" | cut -d. -f2)
 #TODO  desc=$(awk ...)
-
+desc=$(cat ~/"$wikiroot"/"$wikidir"/"$filename" |
+awk '
+BEGIN {
+    FS = "::";
+    VALUE = 0;
+    WORD = ""
+    DEF = ""
+    DECK = "";
+}
+{
+        if(WORD == "Description") {
+            printf("%s\t\t%s",DEF);
+        } else {
+          printf();
+        }
+        fi
+  )
   # Calculate depth of current file, where 1 is current directory.
   depth=$(( $(<<<"$treetrunk" wc -m ) / 4 ))
 
@@ -28,9 +44,9 @@ while IFS='' read -r line; do
 
   # Print out line
   if $(<<<"$filename" grep -q '.wiki$'); then
-    echo "- [[$wikidir/${filename%.wiki}|${wikiname}]]"
+    echo "- [[$wikidir/${filename%.wiki}|${wikiname}]]"$desc"
   elif $(<<<"${filename}" grep -q '/$'); then
-    echo "== [["$wikidir"index|${wikiname}]] ==" |sed -r 's/\/\]/\]/'
+    echo "== [["$wikidir"index|${wikiname}]] =="$desc" |sed -r 's/\/\]/\]/'
   else
     echo "$filename"
   fi
