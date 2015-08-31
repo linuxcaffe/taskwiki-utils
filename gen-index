@@ -33,7 +33,7 @@ BEGIN {
           printf();
         }
         fi
-  )
+ ' )
   # Calculate depth of current file, where 1 is current directory.
   depth=$(( $(<<<"$treetrunk" wc -m ) / 4 ))
 
