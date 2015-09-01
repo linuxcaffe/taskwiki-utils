@@ -18,8 +18,8 @@ while IFS='' read -r line; do
   wikidir=$(echo "$filename" | cut -d. -f2)
 #TODO  desc=$(awk ...)
 filepath="~/${wikiroot}/${wikidir}/${filename}"
-desc=$(echo -e "\t\tDescription")
-# desc=$(echo "$filepath" | awk -f def-desc.awk '' )
+# desc=$(echo -e "\t\tDescription")
+desc=$(echo -e "${filepath}" | awk -f ~/tmp/taskwiki-utils/def-desc.awk )
   # Calculate depth of current file, where 1 is current directory.
   depth=$(( $(<<<"$treetrunk" wc -m ) / 4 ))
 
@@ -38,7 +38,7 @@ desc=$(echo -e "\t\tDescription")
   fi
 done <<< "$(tree -F -P '*.wiki' -I '*index.wiki|*_html|*~*' | head -n -3 | tail -n +2)"
 
-echo "${text}"
+echo "${filepath}"
 echo -e "
   
   # vim:foldlevel=3
