@@ -19,7 +19,7 @@ while IFS='' read -r line; do
 #TODO  desc=$(awk ...)
 filepath="~/${wikiroot}/${wikidir}/${filename}"
 desc=$(echo -e "\t\tDescription")
-# desc=$(echo "$filepath" | awk '' )
+# desc=$(echo "$filepath" | awk -f def-desc.awk '' )
   # Calculate depth of current file, where 1 is current directory.
   depth=$(( $(<<<"$treetrunk" wc -m ) / 4 ))
 
