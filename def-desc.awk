@@ -1,4 +1,5 @@
-
+# the whole objective here is to provide a filename and return
+# Description  :: value, if any
 BEGIN {
     FS = "::";
     VALUE = 0;
