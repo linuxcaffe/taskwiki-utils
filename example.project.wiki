@@ -1,0 +1,42 @@
+[[index|taskwiki]]/[[../project/index|project]]/example.project.wiki
+----
+Project Name	:: Example
+Description	:: This is a freshly templated project wiki 
+Created		:: 2015-09-01 21:17
+Manager		:: djp
+Client		:: 
+Files		:: 
+----
+= Example Project =
+== Example Tasks ==
+=== Scheduled | +PENDING project:example sched.before:today | project:example  ===
+=== Pending | +PENDING project:example ===
+=== Waiting | +WAITING project:example ===
+=== Completed or Deleted | ( +COMPLETED or +DELETED ) project:example | project:example status:completed ===
+----
+- Events
+- Groups
+- Ideas
+- Locations
+- People
+- Things
+
+== Example Project Scope ==
+
+== Example Project Objectives ==
+
+== Example Project Outcomes ==
+
+== Example Project People ==
+
+== Example Project Financial ==
+
+== Example Project Notes/ Brainstorm ==
+
+== Example Project Ledger ==
+
+== Example Project Timelog ==
+
+----
+# vim: foldlevel=3
+
