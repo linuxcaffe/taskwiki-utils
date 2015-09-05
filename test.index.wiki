@@ -1,39 +1,39 @@
 = Taskwiki Index =
 == [[/area/index|area/]] == 
-- [[/area/admin.area|admin]] 
-- [[/area/home.area|home]] 
-- [[/area/it.area|it]] 
+- [[/area/admin.area|admin]]  Paperwork and paying bills, etc.
+- [[/area/home.area|home]]  "home" area of responsibility 
+- [[/area/it.area|it]]  Information Technologies(computer)
 == [[/context/index|context/]] == 
 - [[/wiki/map|map]] 
 == [[/project/index|project/]] == 
-- [[/project/4PetesSake.project|4PetesSake]] 
-- [[/project/62Canoe.project|62Canoe]] 
-- [[/project/acct.project|acct]] 
-- [[/project/CAHS.project|CAHS]] 
-- [[/project/CAS.project|CAS]] 
-- [[/project/contact.project|contact]] 
-- [[/project/domains.project|domains]] 
-- [[/project/foo.project|foo]] 
-- [[/project/gear.project|gear]] 
-- [[/project/GL.project|GL]] 
-- [[/project/HCV.project|HCV]] 
-- [[/project/madoc.project|madoc]] 
-- [[/project/makers.project|makers]] 
-- [[/project/manse.project|manse]] 
-- [[/project/Mom.project|Mom]] 
-- [[/project/prod.project|prod]] 
-- [[/project/StP.project|StP]] 
+- [[/project/4PetesSake.project|4PetesSake]]  a St Peter's Church Band
+- [[/project/62Canoe.project|62Canoe]]  Hand-crafted cedar-strip canoes, made and sold on Highway 62
+- [[/project/acct.project|acct]]  Keeping ledgers, bills, taxes etc
+- [[/project/CAHS.project|CAHS]]  A feature film, a Vimeo series, an Indigogo pitch
+- [[/project/CAS.project|CAS]]  Tom Patrick vs CAS et al
+- [[/project/contact.project|contact]]  Staying in touch! 
+- [[/project/domains.project|domains]]  Maintenence of website domain names
+- [[/project/foo.project|foo]]   
+- [[/project/gear.project|gear]]  tasks for production equipment
+- [[/project/GL.project|GL]]  Gerry Legace Estate  
+- [[/project/HCV.project|HCV]]  
+- [[/project/madoc.project|madoc]]  Various community projects 
+- [[/project/makers.project|makers]]   
+- [[/project/manse.project|manse]]  the Presbyterian Manse
+- [[/project/Mom.project|Mom]]  
+- [[/project/prod.project|prod]]  Lights, Camera, Action!
+- [[/project/StP.project|StP]]  tasks related to the church and/ or cleaning duties
 - [[/wiki/SuperNarrative|SuperNarrative]] 
-- [[/project/syd.project|syd]] 
-- [[/project/tw.project|tw]] 
-- [[/project/vidclass.project|vidclass]] 
-- [[/project/web.project|web]] 
+- [[/project/syd.project|syd]]  Syd Patrick Health and estate 
+- [[/project/tw.project|tw]]  A command-line todo list manager
+- [[/project/vidclass.project|vidclass]]  How to make good video, introductory classes
+- [[/project/web.project|web]]   
 == [[/tag/index|tag/]] == 
-- [[/tag/feature.tag|feature]] 
-- [[/tag/StP.tag|StP]] 
-- [[/tag/Tom.tag|Tom]] 
+- [[/tag/feature.tag|feature]]  software development
+- [[/tag/StP.tag|StP]]  St Peter's Presbyterian related tasks 
+- [[/tag/Tom.tag|Tom]]  Thomas Alexander Patrick tag 
 filepath = tag/Tom.tag.wiki
 wikiname = Tom
 filename = Tom.tag.wiki
-desc = 
+desc =  Thomas Alexander Patrick tag 
 # vim:foldlevel=3

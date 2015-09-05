@@ -20,7 +20,8 @@ while IFS='' read -r line; do
   filepath="$(echo "${wikidir}/${filename}" | sed 's;\/\/$;\/;g')"
 #filepath="~/${wikiroot}/${wikidir}/${filename}"
 # desc=$(echo -e "\t\tDescription")
-desc=$(awk -f /home/djp/tmp/taskwiki-utils/def-desc.awk < ${filepath})
+desc=$(echo -e "\t\t$(grep 'Description\s\+::' $filepath |cut -d ':' -f 3)")
+#desc=$(awk -f /home/djp/tmp/taskwiki-utils/def-desc.awk < ${filepath})
   # Calculate depth of current file, where 1 is current directory.
   depth=$(( $(<<<"$treetrunk" wc -m ) / 4 ))
 
@@ -31,7 +32,7 @@ desc=$(awk -f /home/djp/tmp/taskwiki-utils/def-desc.awk < ${filepath})
 
   # Print out line
   if $(<<<"$filename" grep -q '.wiki$'); then
-    echo "- [[/$wikidir/${filename%.wiki}|${wikiname}]] ${desc}"
+    echo -e "- [[/$wikidir/${filename%.wiki}|${wikiname}]] ${desc}"
   elif $(<<<"${filename}" grep -q '/$'); then
     echo -e "== [[/${wikidir}index|${wikiname}]] == ${desc}" | sed 's;\/\/$;\/;g'
   else
