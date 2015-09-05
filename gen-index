@@ -14,12 +14,13 @@ while IFS='' read -r line; do
   # Assuming there are no files with ── in their name.
   filename="$(<<<"$line" sed -r 's/.*── (.*)/\1/' )"
   treetrunk="$(<<<"$line" sed -r 's/(.*── ).*/\1/')"
-  wikiname=$(echo "$filename" | cut -d. -f1)
-  wikidir=$(echo "$filename" | cut -d. -f2)
+  wikiname=$(echo "$filename" | cut -d. -f1 | sed 's;\/\/$;\/;g')
+  wikidir=$(echo "$filename" | cut -d. -f2 | sed 's;\/\/$;\/;g')
 #TODO  desc=$(awk ...)
-filepath="~/${wikiroot}/${wikidir}/${filename}"
+  filepath="$(echo "${wikidir}/${filename}" | sed 's;\/\/$;\/;g')"
+#filepath="~/${wikiroot}/${wikidir}/${filename}"
 # desc=$(echo -e "\t\tDescription")
-desc=$(echo -e "${filepath}" | awk -f def-desc.awk )
+desc=$(awk -f /home/djp/tmp/taskwiki-utils/def-desc.awk < ${filepath})
   # Calculate depth of current file, where 1 is current directory.
   depth=$(( $(<<<"$treetrunk" wc -m ) / 4 ))
 
@@ -30,16 +31,16 @@ desc=$(echo -e "${filepath}" | awk -f def-desc.awk )
 
   # Print out line
   if $(<<<"$filename" grep -q '.wiki$'); then
-    echo "- [[$wikidir/${filename%.wiki}|${wikiname}]] ${desc}"
+    echo "- [[/$wikidir/${filename%.wiki}|${wikiname}]] ${desc}"
   elif $(<<<"${filename}" grep -q '/$'); then
-    echo "== [[${wikidir}index|${wikiname}]] == ${desc}" | sed -r 's/\/\]/\]/'
+    echo -e "== [[/${wikidir}index|${wikiname}]] == ${desc}" | sed 's;\/\/$;\/;g'
   else
     echo "$filename"
   fi
 done <<< "$(tree -F -P '*.wiki' -I '*index.wiki|*_html|*~*' | head -n -3 | tail -n +2)"
 
-echo "${filepath}"
-echo -e "
-  
-  # vim:foldlevel=3
-  "
+echo "filepath = ${filepath}"
+echo "wikiname = ${wikiname}"
+echo "filename = ${filename}"
+echo "desc = ${desc}"
+echo "# vim:foldlevel=3"
